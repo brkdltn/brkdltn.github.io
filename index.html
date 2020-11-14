@@ -77,6 +77,22 @@
             </div>
         </div>
   </div>
- 
+	  <script>
+		  //konami code - thx to https://stackoverflow.com/a/45576888 :)
+		  function onKonamiCode(cb) {
+		  var input = '';
+		  //var key = '38384040373937396665';
+			var key = '838583';
+		  document.addEventListener('keydown', function (e) {
+				input += ("" + e.keyCode);
+				if (input === key) {
+					return cb();
+				}
+			  if (!key.indexOf(input)) return;
+			  input = ("" + e.keyCode);
+		  });
+		  }
+		  onKonamiCode(function () {window.location.href = "/stars.html";})
+	 </script>
 	</body>
 </html>
